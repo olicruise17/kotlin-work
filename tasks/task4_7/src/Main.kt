@@ -4,7 +4,7 @@ import kotlin.io.path.forEachLine
 fun main(args: Array<String>) {
 
     val path = Paths.get(args[0])
-    println("File size: ${path.toFile().length()} bytes")
+
 
     var highest = 0
     var highest_line = 0
