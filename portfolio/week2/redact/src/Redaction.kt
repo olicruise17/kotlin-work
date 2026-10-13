@@ -6,28 +6,11 @@
 
 // function to redact string
 
-fun redact(originalText: String,redacted_word: String,replacement: Char = 'X'): String {
+fun redact(originalText: String,redacted_word: String,replacement: Char = 'X'): String {    
 
+    // replaces redacted word with the replacement character and repeats for every letter in word
 
-    // splits the string into indivdual words
+    return originalText.replace(redacted_word,replacement.toString().repeat(redacted_word.length))
 
-    val words = originalText.split(" ")
-      
-    // each word is mapped to the overall result
-
-    val result = words.map { word ->
-
-        // checks if each word is the same as target word and changes word if so
-
-        if (word == redacted_word) {
-            replacement.toString().repeat(word.length)
-        } else {
-            word
-            }
-        }
-
-    // returns result
-
-    return result.joinToString(" ")
 
 }
