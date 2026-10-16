@@ -8,3 +8,13 @@ fun grade(mark: Int): String {
         else       -> return "?"
     }
 }
+
+fun main(args: Array<String>){
+    val no_args = args.size
+
+    for (n in 0..(no_args-1)){
+        var number = args[n].toInt()
+        var result = grade(number)
+        println("$number is a $result")
+    }
+}
