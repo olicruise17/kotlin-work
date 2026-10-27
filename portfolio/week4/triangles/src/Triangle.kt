@@ -6,7 +6,7 @@ import kotlin.math.sqrt
 class Triangle(val sideA: Double, val sideB: Double, val sideC: Double){
 
     init{
-        if ((sideA > sideB + sideC) || (sideB > sideA + sideC) || (sideC < sideB + sideA)){
+        if ((sideA >= sideB + sideC) || (sideB >= sideA + sideC) || (sideC >= sideB + sideA)){
             
             throw IllegalArgumentException("triangle not valid")
 
@@ -26,5 +26,5 @@ class Triangle(val sideA: Double, val sideB: Double, val sideC: Double){
         get() = ((sideA + sideB + sideC)/2)
 
 
-    override fun toString() = "($sideA, $sideB, $sideC)"
+    override fun toString() = "Triangle($sideA, $sideB, $sideC)"
 }
