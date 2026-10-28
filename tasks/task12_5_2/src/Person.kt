@@ -1,6 +1,6 @@
 // Task 12.5.2: class with a custom getter
 
-import kotlinx.datetime.LocalDate
+import java.time.LocalDate
 
 class Person(_name: String, val birth: LocalDate) {
     var isMarried = false
