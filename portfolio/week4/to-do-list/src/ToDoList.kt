@@ -31,8 +31,6 @@ class ToDoList() {
     // loads contents of file into List
 
     fun load(filename: String) {
-        // Implement code to read To Do list from a file here
-        // See data/to-do.csv for an example of the format
 
         // loads contents of file and creates ToDoItem object for each line
 
@@ -61,8 +59,7 @@ class ToDoList() {
     // deletes all items where ItemStatus is "Done"
 
     fun deleteDone(): Boolean {
-        // Write code here to remove items with status of Done
-        // Return true if any were removed, false if none were removed
+        
         val original_size = items.size
 
         for(item in items.toList()){
@@ -86,8 +83,6 @@ class ToDoList() {
     // returns list where ItemStatus is equal to status in parameter
 
     fun getItems(status: ItemStatus? = null): List<ToDoItem> {
-        // Write code here to return a list of items with the matching
-        // status, or a list of all items if status argument is null
 
         // creates temporary list with items that fit criteria
 
@@ -110,9 +105,7 @@ class ToDoList() {
     // returns all items where date is equal to date is parameter
 
     fun getItemsDueOn(date: LocalDate): List<ToDoItem> {
-        // Write code here to return a list of items
-        // that are due on the specified date
-
+        
         // creates temporary list with items that fit criteria
 
         val temp_Items = mutableListOf<ToDoItem>()
