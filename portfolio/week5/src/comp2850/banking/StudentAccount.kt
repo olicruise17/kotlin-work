@@ -1,10 +1,9 @@
+// Name: Oliver Cruise
+// StudentID: 201823825
+
 // creates package
 
 package comp2850.banking
-
-// defines maximum overdraft
-
-const val MAX_OVERDRAFT = 100
 
 // StudentAccount class inherits from BankAccount class
 
@@ -20,8 +19,8 @@ class StudentAccount(holder : String): BankAccount(holder){
 
     var overdraft: Int = 0
     set(value) {
-        if (value < 0 || value > MAX_OVERDRAFT){
-            throw IllegalArgumentException("Overdraft can only be between 0 and $MAX_OVERDRAFT")
+        if (value < 0 || value > 100){
+            throw IllegalArgumentException("Overdraft can only be between 0 and 100")
         } else {
                 field = value
             }
@@ -54,7 +53,7 @@ class StudentAccount(holder : String): BankAccount(holder){
     // otherwise false
 
     fun withdrawalsAllowed(): Boolean{
-        if (balance + overdraft > 0){
+        if (balance + overdraft == 0){
             return false
         }else{
             return true
@@ -62,6 +61,6 @@ class StudentAccount(holder : String): BankAccount(holder){
     }
 
     // toString function to format the account
-    
+
     override fun toString() = "Account for $holder, balance = $balance (overdraft = $overdraft)"
 }
